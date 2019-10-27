@@ -1,0 +1,36 @@
+# Lx x Ly site contraction (Lx=2, Ly=1)
+
+## def Contract_scalar_2x1(\
+##     t0_2,t1_2,t2_2,t3_2,\
+##     t0_1,t1_1,t2_1,t3_1,\
+##     t0_0,t1_0,t2_0,t3_0,\
+##     o1_1,o2_1\
+##     ):
+
+tensor t0_0 bt0_0t1_0 bt0_0t0_1 
+tensor t3_0 bt3_0t3_1 bt2_0t3_0 
+tensor t0_2 bt0_1t0_2 bt0_2t1_2 
+tensor t3_2 bt2_2t3_2 bt3_1t3_2 
+tensor t1_0 bt1_0t2_0 bt0_0t1_0 bt1_0t1_1 bct1_0t1_1 
+tensor t2_0 bt2_0t3_0 bt1_0t2_0 bt2_0t2_1 bct2_0t2_1 
+tensor t0_1 bt0_0t0_1 bt0_1t0_2 bt0_1t1_1 bct0_1t1_1 
+tensor t1_2 bt0_2t1_2 bt1_2t2_2 bt1_1t1_2 bct1_1t1_2 
+tensor t2_2 bt1_2t2_2 bt2_2t3_2 bt2_1t2_2 bct2_1t2_2 
+tensor t3_1 bt3_1t3_2 bt3_0t3_1 bt2_1t3_1 bct2_1t3_1 
+tensor t1_1 bt0_1t1_1 bt1_1t1_2 bt1_1t2_1 bt1_0t1_1 m1_1 
+tensor t2_1 bt1_1t2_1 bt2_1t2_2 bt2_1t3_1 bt2_0t2_1 m2_1 
+tensor t1_1_conj bct0_1t1_1 bct1_1t1_2 bct1_1t2_1 bct1_0t1_1 mc1_1 
+tensor t2_1_conj bct1_1t2_1 bct2_1t2_2 bct2_1t3_1 bct2_0t2_1 mc2_1 
+tensor o1_1 m1_1 mc1_1 
+tensor o2_1 m2_1 mc2_1 
+
+bond_dim 100 bt0_0t1_0 bt1_0t2_0 bt2_0t3_0 
+bond_dim 100 bt0_0t0_1 bt0_1t0_2 
+bond_dim 100 bt0_2t1_2 bt1_2t2_2 bt2_2t3_2 
+bond_dim 100 bt3_0t3_1 bt3_1t3_2 
+bond_dim 10 bt1_0t1_1 bct1_0t1_1 bt2_0t2_1 bct2_0t2_1 
+bond_dim 10 bt0_1t1_1 bct0_1t1_1 
+bond_dim 10 bt1_1t2_1 bct1_1t2_1 bt1_1t1_2 bct1_1t1_2 
+bond_dim 10 bt2_1t3_1 bct2_1t3_1 bt2_1t2_2 bct2_1t2_2 
+bond_dim 2 m1_1 mc1_1 
+bond_dim 2 m2_1 mc2_1 
